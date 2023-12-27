@@ -22,7 +22,9 @@ public class SpringSecurityConfiguration {
 
         http
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults());
+                .formLogin(Customizer.withDefaults()) // form logini çıkartıyor.
+                //.httpBasic(Customizer.withDefaults()); // olmadı maalesef
+                ;
 
         return http.build();
 
